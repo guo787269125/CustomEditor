@@ -7,7 +7,17 @@
 		{
 			"Name": "CustomModule",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"CoreUObject",
+				"UnrealEd"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ToolbarExtention",
+			"Enabled": false
 		}
 	]
 }
