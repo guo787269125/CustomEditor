@@ -2,10 +2,4 @@
 
 #include "SCustomGraphPin.h"
 
-SCustomGraphPin::SCustomGraphPin()
-{
-}
 
-SCustomGraphPin::~SCustomGraphPin()
-{
-}

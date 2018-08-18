@@ -3,13 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include <SGraphPin.h>
 
 /**
  * 
  */
-class MANTRACUSTOMPIN_API SCustomGraphPin
+class MANTRACUSTOMPIN_API SCustomGraphPin : public SGraphPin
 {
 public:
-	SCustomGraphPin();
-	~SCustomGraphPin();
+	
 };
