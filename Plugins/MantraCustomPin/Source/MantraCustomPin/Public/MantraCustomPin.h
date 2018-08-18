@@ -12,4 +12,9 @@ public:
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
+
+
+private:
+	// 定义指针用于存储，方便后面卸载
+	TSharedPtr<class FCustomPinFactoryt> CustomPinFactory;
 };

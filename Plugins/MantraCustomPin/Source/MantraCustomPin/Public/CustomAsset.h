@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType, Blueprintable)
 class MANTRACUSTOMPIN_API UCustomAsset : public UObject
 {
 	GENERATED_BODY()
