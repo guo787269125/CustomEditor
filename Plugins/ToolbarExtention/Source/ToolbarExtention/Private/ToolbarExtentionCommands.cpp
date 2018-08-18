@@ -9,7 +9,7 @@ void FToolbarExtentionCommands::RegisterCommands()
 	UI_COMMAND(PluginAction, "ToolbarExtention", "Execute ToolbarExtention action", EUserInterfaceActionType::Button, FInputGesture());
 	
 	// 设置按钮显示内容和提示内容
-	UI_COMMAND(MantraButton, "MantraExtention", "Execute MantraExtention action", EUserInterfaceActionType::Button, FInputGesture());
+	UI_COMMAND(MantraButton, "MantraExtention", "Execute MantraExtention action", EUserInterfaceActionType::RadioButton, FInputGesture());
 
 }
 

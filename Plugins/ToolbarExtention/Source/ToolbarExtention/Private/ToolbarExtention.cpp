@@ -7,6 +7,8 @@
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 
 #include "LevelEditor.h"
+#include <../MainFrame/Public/Interfaces/IMainFrameModule.h>
+#include <SlateApplication.h>
 
 static const FName ToolbarExtentionTabName("ToolbarExtention");
 
@@ -84,6 +86,38 @@ void FToolbarExtentionModule::AddMantraButtonExtention(FToolBarBuilder& Builder)
 void FToolbarExtentionModule::MantraButtonClicked()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Mantra Button Clicked"));
+
+	// 点击按钮之后打开一个窗口
+	// 1 创建窗口
+	TSharedPtr<SWindow> MantraWindow = SNew(SWindow)
+		.Title(FText::FromString("Mantra Window"))
+		.ClientSize(FVector2D(800, 400))
+		.SupportsMaximize(true)
+		.SupportsMinimize(true)
+		[
+			SNew(SVerticalBox)
+			+ SVerticalBox::Slot()
+			.HAlign(EHorizontalAlignment::HAlign_Center)
+			.VAlign(EVerticalAlignment::VAlign_Center)
+			[
+				SNew(STextBlock)
+				.Text(FText::FromString("Hello, Mantra"))
+			]
+		];
+
+	// 2 添加和显示窗口
+	// 如果有父窗口则添加为子窗口，否则直接添加
+	IMainFrameModule& MainFrameModule = FModuleManager::LoadModuleChecked<IMainFrameModule>("MainFrame");
+	UE_LOG(LogTemp, Warning, TEXT("Loaded Module"));
+
+	if (MainFrameModule.GetParentWindow().IsValid())
+	{
+		FSlateApplication::Get().AddWindowAsNativeChild(MantraWindow.ToSharedRef(), MainFrameModule.GetParentWindow().ToSharedRef());
+	}
+	else
+	{
+		FSlateApplication::Get().AddWindow(MantraWindow.ToSharedRef());
+	}
 }
 
 void FToolbarExtentionModule::ShutdownModule()
