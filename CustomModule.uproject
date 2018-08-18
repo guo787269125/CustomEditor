@@ -18,6 +18,14 @@
 		{
 			"Name": "ToolbarExtention",
 			"Enabled": false
+		},
+		{
+			"Name": "CustomConsoleCommand",
+			"Enabled": false
+		},
+		{
+			"Name": "CustomPinFactory",
+			"Enabled": false
 		}
 	]
 }
