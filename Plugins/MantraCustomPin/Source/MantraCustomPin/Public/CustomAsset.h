@@ -13,8 +13,10 @@ UCLASS()
 class MANTRACUSTOMPIN_API UCustomAsset : public UObject
 {
 	GENERATED_BODY()
-	
-	
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Mantra)
+		FLinearColor MainColor;
 	
 	
 };

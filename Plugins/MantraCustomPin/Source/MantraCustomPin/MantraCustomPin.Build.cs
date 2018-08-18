@@ -41,7 +41,8 @@ public class MantraCustomPin : ModuleRules
 				"Slate",
 				"SlateCore",
                 "UnrealEd",
-                "GraphEditor"
+                "GraphEditor",
+                "AppFramework"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
